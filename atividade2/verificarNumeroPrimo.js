@@ -18,12 +18,23 @@ function verificarNumeroPrimo(n) {
     return true;
 }
 
-let n = 2
-console.log(`Insira um numero: ${n} `);
+function retornarNumeroPrimo(x) {
 
-if (verificarNumeroPrimo(n)) {
-    console.log(`O numero ${n} é primo`);    
+    if (verificarNumeroPrimo(x)) {
+        console.log(`O numero ${x} é primo`);    
+    }
+    else{
+        console.log(`O numero ${x} não é primo`);
+    }
 }
-else{
-    console.log(`O numero ${n} não é primo`);
-}
+retornarNumeroPrimo(0);
+retornarNumeroPrimo(1);
+retornarNumeroPrimo(2);
+retornarNumeroPrimo(3);
+retornarNumeroPrimo(7);
+retornarNumeroPrimo(83);
+retornarNumeroPrimo(100);
+retornarNumeroPrimo(991);
+retornarNumeroPrimo(104729);
+retornarNumeroPrimo(14348907);
+
