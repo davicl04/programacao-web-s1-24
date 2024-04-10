@@ -2,18 +2,48 @@ const express = require('express');
 const func = require('./util/funcaoOperador');
 const app = express();
 
-app.get('/funcaoOperador/:op/:x/:y', function(res, req){
-    let x = req.params.x;
-    let y = req.params.y;
-    let op = req.params.op;
+app.get('/', function(req, res) {
+    res.send('Página Inicial');
+})
 
-    let operac = func.imprimirOperacaov3(op, x, y);
-    res.send(operac);
+app.get('/soma/:a/:b', function(req, res){
+    let a = req.params.a;
+    let b = req.params.b;
+    let c = func.somar(a, b);
+
+    res.send(""+c);
+
+});
+
+app.get('/sub/:a/:b', function(req, res){
+    let a = req.params.a;
+    let b = req.params.b;
+    let c = func.sub(a, b);
+
+    res.send(""+c);
+
+});
+
+app.get('/multi/:a/:b', function(req, res){
+    let a = req.params.a;
+    let b = req.params.b;
+    let c = func.multi(a, b);
+
+    res.send(""+c);
+
+});
+
+app.get('/div/:a/:b', function(req, res){
+    let a = req.params.a;
+    let b = req.params.b;
+    let c = func.div(a, b);
+
+    res.send(""+c);
 
 });
 
 
-const PORT = 100;
+const PORT = 8080;
 
 app.listen(PORT, function(){
     console.log("app rodando na porta " + PORT);
