@@ -1,26 +1,31 @@
-function imprimirOperacaov3(op, x, y){
-    let z;
-    switch (op) {
-        case "soma":
-            z = x+y
-            break;
-        case "subtrair":
-            z = x-y
-            break;
-        case "multiplicar":
-            z = x*y
-            break;
-        case "dividir":
-            z = x/y
-            break;    
-    
-        default:
-            break;
-    }
-    console.log(`Resultado de uma ${op} entre ${x} e ${y} é ${z} `);
+/**
+ * 
+ * @param {Number} a 
+ * @param {Number} b 
+ * @returns {Number}
+ * 
+ */
 
+
+function somar(a , b){
+    return Number(a) + Number(b);
 }
 
+function sub(a, b) {
+    return Number(a) - Number(b);
+}
+
+function multi(a, b) {
+    return Number(a) * Number(b);
+}
+
+function div(a, b) {
+    return Number(a) / Number(b);
+}
 module.exports = {
-    imprimirOperacaov3
+    somar,
+    sub,
+    multi,
+    div,
+
 }
